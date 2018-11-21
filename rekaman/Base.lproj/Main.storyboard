@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TN1-Gk-AF4">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="npf-cr-YxM">
+            <objects>
+                <viewController id="TN1-Gk-AF4" customClass="ViewController" customModule="Audio_Recording" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bD0-A6-fKx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="F0b-v3-RMg">
+                                <rect key="frame" x="0.0" y="245" width="375" height="422"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="422" id="wAw-0T-xW5"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="hve-Mw-4Wm">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hve-Mw-4Wm" id="i6O-kG-SWg">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="TN1-Gk-AF4" id="HOv-1H-DqE"/>
+                                    <outlet property="delegate" destination="TN1-Gk-AF4" id="EpW-Gd-mu9"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xSd-KT-BTd">
+                                <rect key="frame" x="103" y="98" width="169" height="57"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="169" id="Kcs-Yx-8zg"/>
+                                    <constraint firstAttribute="height" constant="57" id="v7Y-Cb-huO"/>
+                                </constraints>
+                                <state key="normal" title="Start Recording">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="record:" destination="TN1-Gk-AF4" eventType="touchUpInside" id="dKU-ge-owe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="F0b-v3-RMg" firstAttribute="trailing" secondItem="Jfn-4x-plk" secondAttribute="trailing" id="1P7-s3-Lt3"/>
+                            <constraint firstItem="F0b-v3-RMg" firstAttribute="bottom" secondItem="Jfn-4x-plk" secondAttribute="bottom" id="7oa-2e-Ars"/>
+                            <constraint firstItem="F0b-v3-RMg" firstAttribute="leading" secondItem="Jfn-4x-plk" secondAttribute="leading" id="Uz4-eI-W2s"/>
+                            <constraint firstItem="xSd-KT-BTd" firstAttribute="leading" secondItem="Jfn-4x-plk" secondAttribute="leading" constant="103" id="cVs-ty-Wdd"/>
+                            <constraint firstItem="Jfn-4x-plk" firstAttribute="trailing" secondItem="xSd-KT-BTd" secondAttribute="trailing" constant="103" id="gDQ-Ts-V55"/>
+                            <constraint firstItem="xSd-KT-BTd" firstAttribute="top" secondItem="Jfn-4x-plk" secondAttribute="top" constant="78" id="gXg-B0-T9U"/>
+                            <constraint firstItem="F0b-v3-RMg" firstAttribute="top" secondItem="xSd-KT-BTd" secondAttribute="bottom" constant="90" id="r7o-sn-s8C"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Jfn-4x-plk"/>
+                    </view>
+                    <connections>
+                        <outlet property="buttonLabel" destination="xSd-KT-BTd" id="Cdu-wp-v16"/>
+                        <outlet property="myTableView" destination="F0b-v3-RMg" id="n3M-Jx-UTI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ziw-Bd-SIv" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-79.200000000000003" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>
